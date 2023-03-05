@@ -31,18 +31,18 @@ namespace UserRegistration19
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtno = new System.Windows.Forms.TextBox();
-            this.txttitle = new System.Windows.Forms.TextBox();
             this.txtauthor = new System.Windows.Forms.TextBox();
+            this.txttitle = new System.Windows.Forms.TextBox();
+            this.txtno = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -73,23 +73,26 @@ namespace UserRegistration19
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fill Here";
             // 
-            // label2
+            // txtauthor
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Accession Number";
+            this.txtauthor.Location = new System.Drawing.Point(131, 81);
+            this.txtauthor.Name = "txtauthor";
+            this.txtauthor.Size = new System.Drawing.Size(100, 20);
+            this.txtauthor.TabIndex = 5;
             // 
-            // label3
+            // txttitle
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Title";
+            this.txttitle.Location = new System.Drawing.Point(131, 52);
+            this.txttitle.Name = "txttitle";
+            this.txttitle.Size = new System.Drawing.Size(100, 20);
+            this.txttitle.TabIndex = 4;
+            // 
+            // txtno
+            // 
+            this.txtno.Location = new System.Drawing.Point(131, 25);
+            this.txtno.Name = "txtno";
+            this.txtno.Size = new System.Drawing.Size(100, 20);
+            this.txtno.TabIndex = 3;
             // 
             // label4
             // 
@@ -100,26 +103,23 @@ namespace UserRegistration19
             this.label4.TabIndex = 2;
             this.label4.Text = "Author";
             // 
-            // txtno
+            // label3
             // 
-            this.txtno.Location = new System.Drawing.Point(131, 25);
-            this.txtno.Name = "txtno";
-            this.txtno.Size = new System.Drawing.Size(100, 20);
-            this.txtno.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(29, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Title";
             // 
-            // txttitle
+            // label2
             // 
-            this.txttitle.Location = new System.Drawing.Point(131, 52);
-            this.txttitle.Name = "txttitle";
-            this.txttitle.Size = new System.Drawing.Size(100, 20);
-            this.txttitle.TabIndex = 4;
-            // 
-            // txtauthor
-            // 
-            this.txtauthor.Location = new System.Drawing.Point(131, 81);
-            this.txtauthor.Name = "txtauthor";
-            this.txtauthor.Size = new System.Drawing.Size(100, 20);
-            this.txtauthor.TabIndex = 5;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(29, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Accession Number";
             // 
             // btnAdd
             // 
@@ -162,14 +162,6 @@ namespace UserRegistration19
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search";
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(6, 19);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(100, 20);
-            this.txtSearch.TabIndex = 0;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -178,6 +170,14 @@ namespace UserRegistration19
             this.dataGridView1.Size = new System.Drawing.Size(434, 94);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(6, 19);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.TabIndex = 0;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // Form3
             // 
@@ -191,6 +191,7 @@ namespace UserRegistration19
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "Form3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library System";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -14,6 +14,7 @@ namespace UserRegistration19
     {
         public Form4()
         {
+            int userID = UserSession.Id;
             InitializeComponent();
         }
 
@@ -21,6 +22,22 @@ namespace UserRegistration19
         {
             Form3 frm3 = new Form3();
             frm3.Show();
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            // Clear user session and show login form
+            UserSession.Id = 0;
+            Form2 loginForm = new Form2();
+            loginForm.Show();
+            this.Hide();
+        }
+
+        private void borrowerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form5 borrower = new Form5();
+            borrower.Show();
+            this.Hide();
         }
     }
 }

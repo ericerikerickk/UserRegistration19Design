@@ -60,5 +60,10 @@ namespace UserRegistration19
             login.Show();
             this.Hide();
         }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

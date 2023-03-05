@@ -19,6 +19,7 @@ namespace UserRegistration19
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Desktop\\UserRegistration19\\UserRegistration19\\LoginDB.mdf;Integrated Security=True");
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            string username = txtUserName.Text;
             string Password = "";
             bool IsExist = false;
             con.Open();
@@ -34,8 +35,10 @@ namespace UserRegistration19
             {
                 if (Cryptography.Decrypt(Password).Equals(txtPassword.Text))
                 {
+                    UserSession.Id = GetUserID(username);
                     Form4 frm4 = new Form4();
                     frm4.Show();
+                    this.Hide();
                 }
                 else
                 {
@@ -54,6 +57,68 @@ namespace UserRegistration19
             Form1 register = new Form1();
             this.Hide();
             register.Show();
+        }
+        private int GetUserID(string username)
+        {
+            // Query database to get user ID based on username
+            // ...
+            int userID = 0;
+
+
+            string sql = "SELECT Id FROM tblUserRegistration WHERE UserName = @Username";
+            SqlCommand command = new SqlCommand(sql, con);
+            command.Parameters.AddWithValue("@Username", username);
+
+            try
+            {
+                // Open SQL connection
+                con.Open();
+
+                // Execute SQL command and get user ID
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    userID = Convert.ToInt32(reader["Id"]);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                // Handle SQL exception
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Close SQL connection
+                con.Close();
+            }
+
+            return userID;
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Do you really want to exit?", "Logout", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

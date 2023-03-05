@@ -37,6 +37,7 @@ namespace UserRegistration19
             this.borrowToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,11 +67,12 @@ namespace UserRegistration19
             this.borrowerToolStripMenuItem.Name = "borrowerToolStripMenuItem";
             this.borrowerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.borrowerToolStripMenuItem.Text = "Borrower";
+            this.borrowerToolStripMenuItem.Click += new System.EventHandler(this.borrowerToolStripMenuItem_Click);
             // 
             // booksToolStripMenuItem
             // 
             this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
-            this.booksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.booksToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.booksToolStripMenuItem.Text = "Books";
             this.booksToolStripMenuItem.Click += new System.EventHandler(this.booksToolStripMenuItem_Click);
             // 
@@ -86,13 +88,13 @@ namespace UserRegistration19
             // borrowToolStripMenuItem1
             // 
             this.borrowToolStripMenuItem1.Name = "borrowToolStripMenuItem1";
-            this.borrowToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.borrowToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
             this.borrowToolStripMenuItem1.Text = "Borrow";
             // 
             // returnToolStripMenuItem
             // 
             this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.returnToolStripMenuItem.Text = "Return";
             // 
             // reportToolStripMenuItem
@@ -101,14 +103,27 @@ namespace UserRegistration19
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.reportToolStripMenuItem.Text = "Report";
             // 
+            // logoutButton
+            // 
+            this.logoutButton.Location = new System.Drawing.Point(270, 172);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(75, 30);
+            this.logoutButton.TabIndex = 1;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(357, 214);
+            this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form4";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -127,5 +142,6 @@ namespace UserRegistration19
         private System.Windows.Forms.ToolStripMenuItem borrowToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem returnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
+        private System.Windows.Forms.Button logoutButton;
     }
 }
