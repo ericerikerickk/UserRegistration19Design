@@ -16,7 +16,7 @@ namespace UserRegistration19
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Desktop\\UserRegistration19\\UserRegistration19\\LoginDB.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Source\\Repos\\UserRegistration19\\LoginDB.mdf;Integrated Security=True");
 
         private void Form5_Load(object sender, EventArgs e)
         {
@@ -32,21 +32,14 @@ namespace UserRegistration19
                 string fname = txtFname.Text;
                 string lname = txtLname.Text;
                 string address = txtAddress.Text;
-                int phone = Convert.ToInt32(txtPhoneNumber.Text);
-                SqlCommand cmd = new SqlCommand("select * from tblUserRegistration where UserName='" + txtUserName.Text + "'", con);
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    dr.Close();
-                    MessageBox.Show("Username Already exist please try another ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
+                string phone = txtPhoneNumber.Text;
+                    con.Close();
+                    con.Open();
                     SqlCommand insert = new SqlCommand("insert into Users(username,fname,lname,address,phone)values('" + username + "','" + fname + "','" + lname + "','" + address + "','" + phone + "')", con);
                     insert.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Record inserted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+
 
             }
             else

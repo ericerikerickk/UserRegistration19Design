@@ -16,7 +16,7 @@ namespace UserRegistration19
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Desktop\\UserRegistration19\\UserRegistration19\\LoginDB.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Source\\Repos\\UserRegistration19\\LoginDB.mdf;Integrated Security=True");
         private void loadDataGrid()
         {
             con.Open();
